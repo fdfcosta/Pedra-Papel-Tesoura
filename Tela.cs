@@ -15,10 +15,6 @@ namespace PedraPapelTesoura
             
 ");
 
-            
-
-
-
             Console.WriteLine($@"
 Regras:
 O jogador deve escolher entre:
@@ -32,11 +28,6 @@ Papel ganha da pedra (embrulhando-a);
 
 
 ");
-
-
-
-          
-
 
             while (Opcao != 'n')
             {
@@ -55,10 +46,8 @@ Papel ganha da pedra (embrulhando-a);
         }
 
 
-
         public static void Continua()
         {
-
 
             try
             {

@@ -8,9 +8,9 @@ namespace Entities
         private static Jogada JogadaUsuario { get; set; }
         private static Jogada JogadaComputador { get; set; }
         private static Random Random { get; set; } = new();
-        public static int VitoriasComputador { get; private set; } = 0;
-        public static int VitoriasJogador { get; private set; } = 0;
-        public static int Empates { get; private set; } = 0;
+        public static int VitoriasComputador { get; private set; }
+        public static int VitoriasJogador { get; private set; }
+        public static int Empates { get; private set; }
 
 
 
@@ -20,11 +20,8 @@ namespace Entities
         public static void RealizaJogada()
         {
 
-
             Console.WriteLine("Faça sua jogada: ");
             string Jogada = Console.ReadLine().Trim();
-
-
 
             while (ChecaNumero(Jogada) != true)
             {
@@ -32,14 +29,10 @@ namespace Entities
 
                 ");
 
-                
-
-
                 Console.Write("Faça sua jogada: ");
                 Jogada = Console.ReadLine().Trim();
 
                 ChecaNumero(Jogada);
-
             }
 
 
@@ -48,11 +41,11 @@ namespace Entities
             JogadaComputador = Enum.Parse<Jogada>(Convert.ToString(Random.Next(3) + 1));
 
 
-
             Console.WriteLine($"Jogador escolheu: {JogadaUsuario}");
-            Console.WriteLine($"Computador escolheu: {JogadaComputador}");
+            Console.WriteLine(@$"Computador escolheu: {JogadaComputador}
+            ");
 
-            Console.WriteLine();
+            
 
             DefineVencedor(JogadaUsuario, JogadaComputador);
 
