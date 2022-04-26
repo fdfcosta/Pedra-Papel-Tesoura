@@ -1,13 +1,10 @@
-﻿using Enums;
-using Entities;
+﻿using Entities;
 
 namespace PedraPapelTesoura
 {
     public class Tela : Jogo
     {
         public static char Opcao = 's';
-
-
 
         public static void ImprimeJogo()
         {
@@ -28,7 +25,6 @@ Papel ganha da pedra (embrulhando-a);
 
 
 ");
-
             while (Opcao != 'n')
             {
                 Placar();
@@ -39,11 +35,10 @@ Papel ganha da pedra (embrulhando-a);
                 Continua();
 
                 Console.Clear();
-
-
-
             }
         }
+
+
 
 
         public static void Continua()

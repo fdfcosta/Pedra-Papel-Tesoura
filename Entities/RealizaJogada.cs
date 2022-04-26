@@ -15,8 +15,6 @@ namespace Entities
 
 
 
-        public Jogo() { }
-
         public static void RealizaJogada()
         {
 
@@ -36,21 +34,19 @@ namespace Entities
             }
 
 
-
             JogadaUsuario = Enum.Parse<Jogada>(Jogada);
             JogadaComputador = Enum.Parse<Jogada>(Convert.ToString(Random.Next(3) + 1));
-
 
             Console.WriteLine($"Jogador escolheu: {JogadaUsuario}");
             Console.WriteLine(@$"Computador escolheu: {JogadaComputador}
             ");
 
-            
-
             DefineVencedor(JogadaUsuario, JogadaComputador);
 
 
         }
+
+
 
         private static bool ChecaNumero(string jogada)
         {
@@ -67,9 +63,10 @@ namespace Entities
             return convJogada > 0 && convJogada < 4;
         }
 
+
+
         private static void DefineVencedor(Jogada jogadaUsuario, Jogada jogadaComputador)
         {
-
             bool UsuarioVenceu = (jogadaUsuario == Jogada.Papel && jogadaComputador == Jogada.Pedra) || (jogadaUsuario == Jogada.Tesoura && jogadaComputador == Jogada.Papel) || (jogadaUsuario == Jogada.Pedra && jogadaComputador == Jogada.Tesoura);
             bool Empate = jogadaUsuario == jogadaComputador;
 
@@ -77,27 +74,21 @@ namespace Entities
             {
                 Console.WriteLine("Vencedor: Jogador!");
                 VitoriasJogador++;
-
-
             }
             else if (Empate)
             {
                 Console.WriteLine("Empate!");
                 Empates++;
-
             }
             else
             {
                 Console.WriteLine("Vencedor: Computador!");
                 VitoriasComputador++;
-
             }
         }
 
         public static void Placar()
         {
-
-
             Console.WriteLine($@"                               PLACAR
            -----------------------------------------------
             Vitórias(s) Jogador: {VitoriasJogador}    
